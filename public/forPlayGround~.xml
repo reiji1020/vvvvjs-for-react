@@ -1,0 +1,143 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="C:\Users\reiji\Documents\dev\vvvvjs-for-react\public\forPlayGround.v4p" scrollx="30" scrolly="0" systemname="forPlayGround" filename="C:\Users\reiji\Documents\dev\vvvv_js_playground\forPlayGround.v4p">
+   <BOUNDS type="Window" left="10740" top="1840" width="11290" height="10210">
+   </BOUNDS>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="0">
+   <BOUNDS type="Node" left="1370" top="3780" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1370" top="3780" width="4960" height="3970">
+   </BOUNDS>
+   <BOUNDS type="Window" left="4010" top="8060" width="6220" height="5060">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D16">
+   </PIN>
+   <PIN pinname="Background Color" visible="1">
+   </PIN>
+   <PIN pinname="Backbuffer Width" slicecount="1" values="256">
+   </PIN>
+   <PIN pinname="Backbuffer Height" slicecount="1" values="256">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="18" systemname="IOBox (Color)">
+   <BOUNDS type="Box" left="4330" top="3050" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4330" top="3050" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Color Output" dstnodeid="0" dstpinname="Background Color">
+   </LINK>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <NODE id="17" systemname="HSV (Color Join)" nodename="HSV (Color Join)" componentmode="Hidden">
+   <PIN pinname="Hue" slicecount="5" visible="1" values="1.2301507002674,1.14105873480439,1.06401330949739,1.23033084925264,0.867005160730332">
+   </PIN>
+   <BOUNDS type="Node" left="2290" top="2600" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Saturation" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Value" slicecount="1" values="0.8">
+   </PIN>
+   <PIN pinname="Alpha" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <NODE id="5" systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden">
+   <PIN pinname="X" slicecount="5" visible="1" values="1.2301507002674,1.14105873480439,1.06401330949739,1.23033084925264,0.867005160730332">
+   </PIN>
+   <PIN pinname="Y" slicecount="5" visible="1" values="1.2301507002674,1.14105873480439,1.06401330949739,1.23033084925264,0.867005160730332">
+   </PIN>
+   <BOUNDS type="Node" left="1520" top="2770" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE id="7" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1760" top="450" width="800" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1760" top="450" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="s">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="10" systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden">
+   <BOUNDS type="Node" left="1690" top="1530" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" visible="1" slicecount="1" values="50">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="2.5">
+   </PIN>
+   </NODE>
+   <NODE id="2" systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden">
+   <BOUNDS type="Node" left="1760" top="830" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Period" slicecount="1" visible="1" values="15">
+   </PIN>
+   <PIN pinname="Change" visible="1">
+   </PIN>
+   <PIN pinname="Cycles" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Period">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Cycles" dstnodeid="10" dstpinname="Random Seed">
+   </LINK>
+   <NODE id="12" systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden">
+   <BOUNDS type="Node" left="1690" top="1980" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Position Out" dstnodeid="5" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Position Out" dstnodeid="17" dstpinname="Hue">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Position Out" dstnodeid="5" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Output" dstnodeid="12" dstpinname="Go To Position">
+   </LINK>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="1370" top="3350" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Layer" dstnodeid="0" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Transform Out" dstnodeid="22" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="22" dstpinname="Color">
+   </LINK>
+   </PATCH>
